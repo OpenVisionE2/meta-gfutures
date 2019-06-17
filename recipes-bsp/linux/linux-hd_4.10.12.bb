@@ -28,6 +28,16 @@ RPROVIDES_kernel-image = "kernel-image-${KERNEL_VERSION}"
 SRC_URI += "http://downloads.mutant-digital.net/linux-${PV}-${ARCH}.tar.gz;name=${ARCH} \
 	file://defconfig \
 	file://initramfs-subdirboot.cpio.gz;unpack=0 \
+    file://export_pmpoweroffprepare.patch \
+    file://TBS-fixes-for-4.10-kernel.patch \
+    file://0001-Support-TBS-USB-drivers-for-4.6-kernel.patch \
+    file://0001-TBS-fixes-for-4.6-kernel.patch \
+    file://0001-STV-Add-PLS-support.patch \
+    file://0001-STV-Add-SNR-Signal-report-parameters.patch \
+    file://blindscan2.patch \
+    file://0001-stv090x-optimized-TS-sync-control.patch \
+    file://t230c2.patch \
+    file://add-more-devices-rtl8xxxu.patch \
 "
 
 SRC_URI_append_arm = " \
