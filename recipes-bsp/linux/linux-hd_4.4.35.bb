@@ -17,13 +17,12 @@ SRC_URI[arm.sha256sum] = "ea4ba0433d252c18f38ff2f4dce4b70880e447e1cffdc2066d5a9b
 
 SRC_URI = "http://downloads.mutant-digital.net/linux-${PV}-${SRCDATE}-${ARCH}.tar.gz;name=${ARCH} \
 	file://defconfig \
-	file://ieee80211-increase-scan-result-expire-time.patch \
 	file://0001-remote.patch \
 	file://initramfs-subdirboot.cpio.gz;unpack=0 \
 	file://HauppaugeWinTV-dualHD.patch \
 	file://dib7000-linux_4.4.179.patch \
 	file://dvb-usb-linux_4.4.179.patch \
-	file://mt7601u_check_return_value_of_alloc_skb.patch \
+	file://wifi-linux_4.4.183.patch \
 	file://findkerneldevice.sh \
 "
 
