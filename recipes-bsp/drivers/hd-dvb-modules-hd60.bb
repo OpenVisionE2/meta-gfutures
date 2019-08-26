@@ -29,7 +29,7 @@ fi
 
 mount -t sysfs sys /sys
 
-/usr/bin/turnoff_power
+${bindir}/turnoff_power
 EOF
 }
 

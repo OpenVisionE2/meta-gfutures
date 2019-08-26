@@ -49,7 +49,7 @@ do_install_append() {
 do_package_qa() {
 }
 
-FILES_${PN} = "${libdir} /etc/udev/rules.d/50-mali.rules"
+FILES_${PN} = "${libdir} ${sysconfdir}/udev/rules.d/50-mali.rules"
 FILES_${PN}-dev = "${incdir}"
 
 INSANE_SKIP_${PN} += "already-stripped dev-so ldflags"
