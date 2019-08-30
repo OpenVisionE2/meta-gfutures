@@ -26,8 +26,8 @@ RPROVIDES_kernel-base = "kernel-${KERNEL_VERSION}"
 RPROVIDES_kernel-image = "kernel-image-${KERNEL_VERSION}"
 
 SRC_URI += "http://downloads.mutant-digital.net/linux-${PV}-${ARCH}.tar.gz;name=${ARCH} \
-	file://defconfig \
-	file://initramfs-subdirboot.cpio.gz;unpack=0 \
+    file://defconfig \
+    file://initramfs-subdirboot.cpio.gz;unpack=0 \
     file://export_pmpoweroffprepare.patch \
     file://TBS-fixes-for-4.10-kernel.patch \
     file://0001-Support-TBS-USB-drivers-for-4.6-kernel.patch \
@@ -38,15 +38,15 @@ SRC_URI += "http://downloads.mutant-digital.net/linux-${PV}-${ARCH}.tar.gz;name=
     file://0001-stv090x-optimized-TS-sync-control.patch \
     file://t230c2.patch \
     file://add-more-devices-rtl8xxxu.patch \
-"
+    "
 
 SRC_URI_append_arm = " \
-	file://findkerneldevice.sh \
-	file://reserve_dvb_adapter_0.patch \
-	file://blacklist_mmc0.patch \
-	file://export_pmpoweroffprepare.patch \
-	file://enable_hauppauge_solohd.patch \
-"
+    file://findkerneldevice.sh \
+    file://reserve_dvb_adapter_0.patch \
+    file://blacklist_mmc0.patch \
+    file://export_pmpoweroffprepare.patch \
+    file://enable_hauppauge_solohd.patch \
+    "
 
 S = "${WORKDIR}/linux-${PV}"
 

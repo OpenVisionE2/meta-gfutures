@@ -24,7 +24,7 @@ SRC_URI = "http://downloads.mutant-digital.net/linux-${PV}-${SRCDATE}-${ARCH}.ta
 	file://dvb-usb-linux_4.4.179.patch \
 	file://wifi-linux_4.4.183.patch \
 	file://findkerneldevice.sh \
-"
+	"
 
 # By default, kernel.bbclass modifies package names to allow multiple kernels
 # to be installed in parallel. We revert this change and rprovide the versioned
