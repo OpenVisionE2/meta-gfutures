@@ -43,7 +43,7 @@ SRC_URI += "http://downloads.mutant-digital.net/linux-${PV}-${ARCH}.tar.gz;name=
 SRC_URI_append_arm = " \
     file://findkerneldevice.sh \
     file://reserve_dvb_adapter_0.patch \
-    file://export_pmpoweroffprepare.patch \
+    file://blacklist_mmc0.patch \
     file://enable_hauppauge_solohd.patch \
     "
 
