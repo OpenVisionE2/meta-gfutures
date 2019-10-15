@@ -4,7 +4,7 @@ PRIORITY = "required"
 LICENSE = "CLOSED"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 PV = "${SRCDATE}"
-DEPENDS = "libdrm patchelf-native"
+DEPENDS = "libdrm"
 
 
 PROVIDES = "virtual/libgles2 virtual/libgles1 virtual/egl virtual/libgbm"
