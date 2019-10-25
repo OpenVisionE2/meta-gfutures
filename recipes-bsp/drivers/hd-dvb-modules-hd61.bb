@@ -8,7 +8,7 @@ require hd-dvb-modules.inc
 SRC_URI[md5sum] = "803f07751c1ecf07b4d21cd4a3e5b996"
 SRC_URI[sha256sum] = "c2bd3fc69457c5f465c379040c17c7cb91e793ba79351c83c1592295f09d4206"
 
-COMPATIBLE_MACHINE = "hd61"
+COMPATIBLE_MACHINE = "^(hd61)$"
 
 INITSCRIPT_NAME = "suspend"
 INITSCRIPT_PARAMS = "start 89 0 ."

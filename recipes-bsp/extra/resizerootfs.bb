@@ -1,7 +1,7 @@
 DESCRIPTION = "Resize Rootfs"
 require conf/license/license-gplv2.inc
 
-COMPATIBLE_MACHINE = "hd51|vs1500|hd60|bre2ze4k|hd61|axultra"
+COMPATIBLE_MACHINE = "^(hd51|vs1500|hd60|bre2ze4k|hd61|axultra)$"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 

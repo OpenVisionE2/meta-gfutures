@@ -6,7 +6,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 KERNEL_RELEASE = "4.10.12"
 
-COMPATIBLE_MACHINE = "hd11|hd51|hd500c|hd530c|hd1100|hd1200|hd1265|hd1500|hd2400|vs1000|vs1500|bre2ze4k|axultra"
+COMPATIBLE_MACHINE = "^(hd11|hd51|hd500c|hd530c|hd1100|hd1200|hd1265|hd1500|hd2400|vs1000|vs1500|bre2ze4k|axultra)$"
 
 inherit kernel machine_kernel_pr
 
