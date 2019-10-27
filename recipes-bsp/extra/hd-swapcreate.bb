@@ -1,6 +1,5 @@
 SUMMARY = "create swap"
 LICENSE = "CLOSED"
-PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 PV = "1.0"
 
