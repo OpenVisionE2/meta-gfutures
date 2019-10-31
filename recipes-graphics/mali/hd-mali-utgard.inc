@@ -3,7 +3,7 @@ SECTION = "base"
 PRIORITY = "required"
 LICENSE = "CLOSED"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
-DEPENDS = "libdrm mesa patchelf-native"
+DEPENDS = "libdrm mesa"
 VER ?= "${@bb.utils.contains('TARGET_ARCH', 'aarch64', '64' , '', d)}"
 
 PROVIDES = "virtual/libgles2 virtual/libgles1 virtual/egl virtual/libgbm"
@@ -29,7 +29,6 @@ do_install_append() {
     install -d ${D}${sysconfdir}/udev/rules.d
     install -m 0644 ${S}/50-mali.rules ${D}${sysconfdir}/udev/rules.d/50-mali.rules
     install -m 0755 ${S}/libMali.so ${D}${libdir}
-    patchelf --set-soname libMali.so ${D}${libdir}/libMali.so
     (cd ${D}/${libdir} && ln -sf libMali.so libmali.so)
     (cd ${D}/${libdir} && ln -sf libMali.so libEGL.so.1.4 \
     && ln -sf libEGL.so.1.4 libEGL.so.1 \
