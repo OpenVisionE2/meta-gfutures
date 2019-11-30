@@ -3,6 +3,18 @@ KERNEL_MODULE_AUTOLOAD += "xfs"
 # We know about rtc
 MACHINE_FEATURES_BACKFILL_CONSIDERED = "rtc"
 
+TARGET_ARCH = "arm"
+DEFAULTTUNE = "cortexa15hf-neon-vfpv4"
+
+IMAGE_CLASSES += " hd-fastboot8gb_image"
+IMAGE_FSTYPES += " hdfastboot8gb"
+CMDLINE ?= "console=ttyAMA0,115200n8"
+
+CHIPSET = "Hi3798Mv200"
+RCTYPE = "27"
+
+MTD_BLACK  = "mmcblk0"
+
 PREFERRED_VERSION_linux-hd = "4.4.35"
 
 #Provider
@@ -40,10 +52,8 @@ MACHINE_EXTRA_RRECOMMENDS = " \
 	ntfs-3g \
 "
 
-MACHINE_FEATURES += " alsa usbhost wlan 3dtv switchoff osdposition hdmicec"
+MACHINE_FEATURES += " alsa usbhost wlan 3dtv switchoff osdposition hdmicec textlcd 7segment blindscan hisil mali transcoding emmc hisi-recovery mountboot"
 
-IMAGEVERSION := "${IMAGE_NAME}"
-IMAGEVERSION[vardepsexclude] = "DATE"
 IMAGEDIR ?= "hd"
 IMAGEDIRRECOVERY ?= "hd-recovery"
 IMGDEPLOYDIR ?= "${DEPLOY_DIR_IMAGE}"

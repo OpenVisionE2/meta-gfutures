@@ -29,9 +29,6 @@ EXTRA_OECONF_append_pn-kodi = " --with-gpu=v3d"
 PACKAGECONFIG_GL_pn-qtbase = " "
 PACKAGECONFIG_append_pn-qtbase += " gles2 linuxfb"
 
-IMAGEVERSION := "${IMAGE_NAME}"
-IMAGEVERSION[vardepsexclude] = "DATE"
-
 IMAGEDIR ?= "${MACHINE}"
 IMGDEPLOYDIR ?= "${DEPLOY_DIR_IMAGE}"
 
