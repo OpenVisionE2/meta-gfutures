@@ -1,3 +1,5 @@
+DISTRO_FEATURES_append += "opengl"
+
 KERNEL_MODULE_AUTOLOAD += "xfs"
 
 # We know about rtc
@@ -40,9 +42,6 @@ EXTRA_OECONF_append_pn-enigma2 += " --with-alphablendingacceleration=always --wi
 # Qt
 PACKAGECONFIG_GL_pn-qtbase = " "
 PACKAGECONFIG_append_pn-qtbase += " gles2 linuxfb"
-
-# Kodi
-EXTRA_OECONF_append_pn-kodi += " --with-gpu=mali --enable-player=hiplayer"
 
 # Gstreamer dvbmediasink
 DVBMEDIASINK_CONFIG = "--with-h265 --with-vb8 --with-vb9 --with-wma --with-wmv --with-pcm  --with-eac3 --with-amr --with-spark"
