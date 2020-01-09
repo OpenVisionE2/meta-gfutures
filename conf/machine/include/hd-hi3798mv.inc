@@ -18,7 +18,6 @@ RCTYPE = "27"
 MTD_BLACK  = "mmcblk0"
 
 PREFERRED_VERSION_linux-hd = "4.4.35"
-PREFERRED_VERSION_ffmpeg = "3.4.2"
 
 #Provider
 PREFERRED_PROVIDER_virtual/kernel ?= "linux-hd"
