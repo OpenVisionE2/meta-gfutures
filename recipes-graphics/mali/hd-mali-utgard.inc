@@ -19,7 +19,7 @@ do_configure[noexec] = "1"
 
 # Generate a mali rules script
 do_compile_append () {
-	cat > 50-mali.rules << EOF
+    cat > 50-mali.rules << EOF
 KERNEL=="mali0", MODE="0660", GROUP="video"
 EOF
 }
