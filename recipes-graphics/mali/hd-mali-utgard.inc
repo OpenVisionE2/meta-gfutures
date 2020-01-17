@@ -51,7 +51,6 @@ do_package_qa() {
 FILES_${PN} = "${libdir} ${sysconfdir}/udev/rules.d/50-mali.rules"
 FILES_${PN}-dev = "${incdir}"
 
-INSANE_SKIP_${PN} += "already-stripped dev-so ldflags"
 
 # The driver is missing EGL/GLES headers and pkgconfig files. Handle
 # the conflicts as mesa and the driver are both providing the same shared libraries.

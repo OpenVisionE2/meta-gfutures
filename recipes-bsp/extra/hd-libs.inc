@@ -38,4 +38,3 @@ do_package_qa() {
 FILES_${PN} = "${libdir}/hisilicon/*"
 FILES_${PN}-dev = ""
 
-INSANE_SKIP_${PN} += "ldflags already-stripped dev-so"
