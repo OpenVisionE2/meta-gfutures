@@ -39,9 +39,10 @@ SRC_URI += "http://downloads.mutant-digital.net/linux-${PV}-${ARCH}.tar.gz;name=
     file://0001-stv090x-optimized-TS-sync-control.patch \
     file://t230c2.patch \
     file://add-more-devices-rtl8xxxu.patch \
+    file://0003-makefile-disable-warnings.patch \
     "
 
-SRC_URI_append_arm = " \
+SRC_URI_append_arm += "\
     file://findkerneldevice.sh \
     file://reserve_dvb_adapter_0.patch \
     file://blacklist_mmc0.patch \
