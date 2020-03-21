@@ -7,13 +7,13 @@ VER ?= "${@bb.utils.contains('TARGET_ARCH', 'aarch64', '64' , '', d)}"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 KERNEL_RELEASE = "4.4.35"
-SRCDATE = "20181228"
+SRCDATE = "20200219"
 COMPATIBLE_MACHINE = "^(hd60|hd61)$"
 
 inherit kernel machine_kernel_pr
 
-SRC_URI[arm.md5sum] = "ede25f1c2c060f1059529a2896cee5a9"
-SRC_URI[arm.sha256sum] = "ea4ba0433d252c18f38ff2f4dce4b70880e447e1cffdc2066d5a9b5f8098ae7e"
+SRC_URI[arm.md5sum] = "f9e67e2d0ceab518510413f8f4315bc3"
+SRC_URI[arm.sha256sum] = "45ae717b966a74326fd7297d81b3a17fd5b3962b7704170682a615ca7cdec644"
 
 SRC_URI = "http://downloads.mutant-digital.net/linux-${PV}-${SRCDATE}-${ARCH}.tar.gz;name=${ARCH} \
 	file://defconfig \
