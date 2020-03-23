@@ -66,3 +66,7 @@ pkg_postinst_kernel-image() {
 	fi
 	true
 }
+
+export KCFLAGS = "-Wno-error=format-truncation \
+                  -Wno-error=missing-attributes \
+                  "
