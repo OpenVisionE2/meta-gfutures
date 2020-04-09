@@ -15,6 +15,9 @@ CMDLINE ?= "console=ttyAMA0,115200n8"
 CHIPSET = "Hi3798Mv200"
 RCTYPE = "27"
 
+KERNEL_FILE = "uImage"
+ROOTFS_FILE = "rootfs.tar.bz2"
+MTD_BOOTFS = "mmcblk0p4"
 MTD_BLACK  = "mmcblk0"
 
 PREFERRED_VERSION_linux-hd = "4.4.35"

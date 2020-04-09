@@ -2,11 +2,12 @@ DESCRIPTION = "${MACHINE} libraries"
 SECTION = "base"
 PRIORITY = "required"
 LICENSE = "CLOSED"
-PR = "${SRCDATE}"
-PACKAGE_ARCH = "${MACHINE_ARCH}"
-VER ?= "${@bb.utils.contains('TARGET_ARCH', 'aarch64', '64' , '', d)}"
 
-SRC_URI = "http://downloads.mutant-digital.net/${MACHINE}/${MACHINE}-libs${VER}-${SRCDATE}.zip"
+PR = "${SRCDATE}"
+
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+
+SRC_URI = "http://downloads.mutant-digital.net/${MACHINE}/${MACHINE}-libs-${SRCDATE}.zip"
 
 S = "${WORKDIR}"
 

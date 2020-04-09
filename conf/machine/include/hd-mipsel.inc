@@ -1,3 +1,8 @@
+MTD_KERNEL = "mtd1"
+MTD_ROOTFS = "mtd2"
+KERNEL_FILE = "kernel.bin"
+ROOTFS_FILE = "rootfs.bin"
+
 PREFERRED_VERSION_linux-hd = "4.10.12"
 
 IMAGE_FSTYPES += "ubi"
