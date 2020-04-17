@@ -3,7 +3,7 @@ DISTRO_FEATURES_append += "opengl"
 KERNEL_MODULE_AUTOLOAD += "xfs"
 
 # We know about rtc
-MACHINE_FEATURES_BACKFILL_CONSIDERED = "rtc"
+MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 
 TARGET_ARCH = "arm"
 DEFAULTTUNE = "cortexa15hf-neon-vfpv4"

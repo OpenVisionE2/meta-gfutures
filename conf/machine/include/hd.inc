@@ -3,7 +3,7 @@ require conf/machine/include/hd-essential.inc
 KERNEL_MODULE_AUTOLOAD += "xfs"
 
 # We know about rtc
-MACHINE_FEATURES_BACKFILL_CONSIDERED = "rtc"
+MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 
 #Provider
 PREFERRED_PROVIDER_virtual/egl ?= "hd-v3ddriver-${MACHINE}"
