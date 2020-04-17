@@ -1,4 +1,4 @@
-DESCRIPTION = "Resize Rootfs"
+DESCRIPTION = "GFutures resize rootfs"
 require conf/license/license-gplv2.inc
 
 COMPATIBLE_MACHINE = "^(hd51|vs1500|hd60|bre2ze4k|hd61|axultra)$"

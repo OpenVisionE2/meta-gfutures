@@ -1,6 +1,6 @@
 inherit module
 
-SUMMARY = "Open Source Mali Utgard GPU Kernel Drivers"
+SUMMARY = "Mali Utgard GPU Kernel Drivers"
 SRC_URI = "https://developer.arm.com/-/media/Files/downloads/mali-drivers/kernel/mali-utgard-gpu/${MALI_PACKAGE_NAME}.tgz;name=driver"
 
 LICENSE = "GPLv2"

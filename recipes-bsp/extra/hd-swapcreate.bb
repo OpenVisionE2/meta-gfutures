@@ -1,4 +1,4 @@
-SUMMARY = "create swap"
+SUMMARY = "GFutures create swap"
 LICENSE = "CLOSED"
 
 PV = "1.0"

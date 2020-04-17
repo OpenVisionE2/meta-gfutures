@@ -1,4 +1,4 @@
-DESCRIPTION = "V3DDRIVER for ${MACHINE}"
+DESCRIPTION = "v3d driver for ${MACHINE}"
 SECTION = "base"
 PRIORITY = "required"
 LICENSE = "CLOSED"
