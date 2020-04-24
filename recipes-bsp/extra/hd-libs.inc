@@ -2,6 +2,8 @@ DESCRIPTION = "${MACHINE} libraries"
 SECTION = "base"
 PRIORITY = "required"
 LICENSE = "CLOSED"
+DEPENDS = "zlib libpng freetype curl libxml2 libjpeg-turbo harfbuzz"
+RDEPENDS_${PN} = "libbluray"
 
 PR = "${SRCDATE}"
 

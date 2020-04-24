@@ -2,7 +2,7 @@ DISTRO_FEATURES_remove = "x11 wayland directfb"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS = " \
 	hd-dvb-modules-${MACHINE} \
-	${@bb.utils.contains("MACHINE_FEATURES", "hisil", "hd-libs-${MACHINE} hd-partitions-${MACHINE} hd-bootargs-${MACHINE} hd-recovery-${MACHINE}" , "", d)} \
+	${@bb.utils.contains("MACHINE_FEATURES", "hisil", "hd-libs-3798mv200 hd-partitions-${MACHINE} hd-bootargs-${MACHINE} hd-recovery-${MACHINE}" , "", d)} \
     ${@bb.utils.contains("MACHINE_FEATURES", "hisi-recovery", "hd-recovery-${MACHINE}" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "mali", "hd-mali-${MACHINE} kernel-module-mali-3798mv200" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "emmc", "hd-resizerootfs partitions-by-name" , "", d)} \
