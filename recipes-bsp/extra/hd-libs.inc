@@ -5,9 +5,9 @@ LICENSE = "CLOSED"
 DEPENDS = "zlib libpng freetype curl libxml2 libjpeg-turbo harfbuzz"
 RDEPENDS_${PN} = "libbluray"
 
-PR = "${SRCDATE}"
-
 PACKAGE_ARCH = "${MACHINE_ARCH}"
+
+PR = "${SRCDATE}"
 
 SRC_URI = "http://downloads.mutant-digital.net/${MACHINE}/${MACHINE}-libs-${SRCDATE}.zip"
 
