@@ -27,8 +27,6 @@ SRC_URI = "http://downloads.mutant-digital.net/linux-${PV}-${SRCDATE}-${ARCH}.ta
 	file://wifi-linux_4.4.183.patch \
 	file://findkerneldevice.sh \
 	file://0004-linux-fix-buffer-size-warning-error.patch \
-	file://modules_mark__inittest__exittest_as__maybe_unused.patch \
-	file://includelinuxmodule_h_copy__init__exit_attrs_to_initcleanup_module.patch \
 	"
 
 # By default, kernel.bbclass modifies package names to allow multiple kernels
