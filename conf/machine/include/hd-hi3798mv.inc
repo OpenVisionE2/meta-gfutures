@@ -53,6 +53,12 @@ MACHINE_EXTRA_RRECOMMENDS = " \
 
 MACHINE_FEATURES += " alsa usbhost wlan 3dtv switchoff osdposition hdmicec textlcd 7segment blindscan hisil mali transcoding emmc hisi-recovery mountboot fastboot"
 
+MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
+	${@bb.utils.contains("MACHINE_FEATURES", "hisil", "hd-libs-3798mv200 hd-partitions-${MACHINE} hd-bootargs-${MACHINE} hd-recovery-${MACHINE}" , "", d)} \
+	${@bb.utils.contains("MACHINE_FEATURES", "hisi-recovery", "hd-recovery-${MACHINE}" , "", d)} \
+	${@bb.utils.contains("MACHINE_FEATURES", "mali", "hd-mali-${MACHINE} kernel-module-mali-3798mv200" , "", d)} \
+	"
+
 IMAGEDIR ?= "hd"
 IMAGEDIRRECOVERY ?= "hd-recovery"
 IMGDEPLOYDIR ?= "${DEPLOY_DIR_IMAGE}"

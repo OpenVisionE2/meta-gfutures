@@ -1,18 +1,13 @@
 DISTRO_FEATURES_remove = "x11 wayland directfb"
 
-MACHINE_ESSENTIAL_EXTRA_RDEPENDS = " \
+MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	hd-dvb-modules-${MACHINE} \
-	${@bb.utils.contains("MACHINE_FEATURES", "hisil", "hd-libs-3798mv200 hd-partitions-${MACHINE} hd-bootargs-${MACHINE} hd-recovery-${MACHINE}" , "", d)} \
-    ${@bb.utils.contains("MACHINE_FEATURES", "hisi-recovery", "hd-recovery-${MACHINE}" , "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "mali", "hd-mali-${MACHINE} kernel-module-mali-3798mv200" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "emmc", "hd-resizerootfs partitions-by-name" , "", d)} \
-	\
 	"
 
-MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS = "\
+MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "\
 	kernel-module-cdfs \
 	${@bb.utils.contains("MACHINE_FEATURES", "v3d-nxpl", "hd-v3ddriver-${MACHINE}" , "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "qtegls", "hd-qteglfs-platform", "",d)} \
 	firmware-carl9170 \
 	firmware-htc7010 \
 	firmware-htc9271 \
@@ -25,7 +20,6 @@ MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS = "\
 	firmware-rtl8192eu \
 	firmware-rtl8xxxu \
 	firmware-zd1211 \
-	\
 	kernel-module-ath9k-htc \
 	kernel-module-carl9170 \
 	kernel-module-mt7601u \

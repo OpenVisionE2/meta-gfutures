@@ -41,6 +41,7 @@ IMAGE_CMD_hdemmc_append_arm = "\
 	cd ${IMGDEPLOYDIR}; \
 	zip ${IMAGE_NAME}_recovery_emmc.zip ${IMAGEDIR}/disk.img ${IMAGEDIR}/imageversion; \
 	zip ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/imageversion ${IMAGEDIR}/kernel.bin ${IMAGEDIR}/rootfs.tar.bz2; \
+	rm -f ${DEPLOY_DIR_IMAGE}/*.ext4; \
 	rm -Rf ${IMAGEDIR}; \
 	"
 
@@ -54,6 +55,8 @@ IMAGE_CMD_ubi_append_mipsel = " \
 	rm -f ${IMGDEPLOYDIR}/*.zip; \
 	cd ${IMGDEPLOYDIR}; \
 	zip ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/*; \
-	rm -Rf ${IMAGEDIR}; \
+	rm -f ${DEPLOY_DIR_IMAGE}/*.ubi; \
+	rm -f ${DEPLOY_DIR_IMAGE}/*.ubifs; \
 	rm -Rf ${IMGDEPLOYDIR}/boot; \
+	rm -Rf ${IMAGEDIR}; \
 	"
