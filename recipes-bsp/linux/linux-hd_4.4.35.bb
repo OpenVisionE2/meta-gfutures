@@ -27,6 +27,10 @@ SRC_URI = "http://downloads.mutant-digital.net/linux-${PV}-${SRCDATE}-${ARCH}.ta
 	file://wifi-linux_4.4.183.patch \
 	file://findkerneldevice.sh \
 	file://0004-linux-fix-buffer-size-warning-error.patch \
+	file://0005-xbox-one-tuner-4.4.patch \
+	file://0006-dvb-media-tda18250-support-for-new-silicon-tuner.patch \
+	file://0007-dvb-mn88472-staging.patch \
+	file://mn88472_reset_stream_ID_reg_if_no_PLP_given.patch \
 	"
 
 # By default, kernel.bbclass modifies package names to allow multiple kernels
