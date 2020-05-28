@@ -13,6 +13,7 @@ IMAGE_FSTYPES += " hdfastboot8gb"
 CMDLINE ?= "console=ttyAMA0,115200n8"
 
 CHIPSET = "Hi3798Mv200"
+HICHIPSET = "3798mv200"
 RCTYPE = "27"
 
 KERNEL_FILE = "uImage"
@@ -53,9 +54,9 @@ MACHINE_EXTRA_RRECOMMENDS = " \
 MACHINE_FEATURES += " alsa usbhost wlan 3dtv switchoff osdposition hdmicec textlcd 7segment blindscan hisil mali transcoding emmc hisi-recovery mountboot fastboot"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
-	${@bb.utils.contains("MACHINE_FEATURES", "hisil", "hd-libs-3798mv200 hd-partitions-${MACHINE} hd-bootargs-${MACHINE} hd-recovery-${MACHINE}" , "", d)} \
+	${@bb.utils.contains("MACHINE_FEATURES", "hisil", "hd-libs-${HICHIPSET} hd-partitions-${MACHINE} hd-bootargs-${MACHINE} hd-tntfs-${HICHIPSET}" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "hisi-recovery", "hd-recovery-${MACHINE}" , "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "mali", "hd-mali-${MACHINE} kernel-module-mali-3798mv200" , "", d)} \
+	${@bb.utils.contains("MACHINE_FEATURES", "mali", "hd-mali-${MACHINE} kernel-module-mali-${HICHIPSET}" , "", d)} \
 	"
 
 IMAGEDIR ?= "hd"
