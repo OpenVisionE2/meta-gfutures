@@ -6,7 +6,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	"
 
 MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "\
-	kernel-module-cdfs \
 	${@bb.utils.contains("MACHINE_FEATURES", "v3d-nxpl", "hd-v3ddriver-${MACHINE}" , "", d)} \
 	"
 

@@ -36,7 +36,6 @@ PREFERRED_PROVIDER_virtual/blindscan-dvbc ?= "hd-dvb-modules-${MACHINE}"
 PREFERRED_PROVIDER_virtual/gstreamer1.0-dvbmediasink ?= "gstreamer1.0-plugin-dvbmediasink"
 PREFERRED_PROVIDER_virtual/enigma2-mediaservice ?= "enigma2-plugin-systemplugins-servicehisilicon"
 
-# require conf/machine/include/arm/arch-armv8a.inc
 require conf/machine/include/tune-cortexa15.inc
 require conf/machine/include/hd-essential.inc
 
@@ -48,7 +47,6 @@ DVBMEDIASINK_CONFIG = "--with-h265 --with-vb8 --with-vb9 --with-wma --with-wmv -
 
 MACHINE_EXTRA_RRECOMMENDS = " \
 	ffmpeg \
-	ntfs-3g \
 "
 
 MACHINE_FEATURES += " alsa usbhost wlan 3dtv switchoff osdposition hdmicec textlcd 7segment blindscan hisil mali transcoding emmc hisi-recovery mountboot fastboot"

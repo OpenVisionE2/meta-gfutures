@@ -18,7 +18,6 @@ MACHINE_FEATURES += "alsa usbhost wlan 3dtv switchoff osdposition hdmicec blinds
 
 MACHINE_EXTRA_RRECOMMENDS = " \
 	gstreamer1.0-plugin-dvbmediasink \
-	ntfs-3g \
 	"
 
 DVBMEDIASINK_CONFIG_arm = "--with-h265 --with-vb8 --with-vb9 --with-wma --with-wmv --with-pcm --with-dts --with-eac3"
