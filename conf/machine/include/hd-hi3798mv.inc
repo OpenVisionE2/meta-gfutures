@@ -49,7 +49,7 @@ MACHINE_EXTRA_RRECOMMENDS = " \
 	ffmpeg \
 "
 
-MACHINE_FEATURES += " alsa usbhost wlan 3dtv switchoff osdposition hdmicec textlcd 7segment blindscan hisil mali transcoding emmc hisi-recovery mountboot fastboot"
+MACHINE_FEATURES += " alsa usbhost switchoff osdposition hdmicec textlcd 7segment blindscan hisil mali transcoding emmc hisi-recovery mountboot fastboot"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "hisil", "hd-libs-${HICHIPSET} hd-partitions-${MACHINE} hd-bootargs-${MACHINE} hd-tntfs-${HICHIPSET}" , "", d)} \
