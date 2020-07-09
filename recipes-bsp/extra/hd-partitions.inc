@@ -7,6 +7,8 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit deploy
 
+PV = "${SRCDATE}"
+
 SRC_URI = "http://source.mynonpublic.com/gfutures/${MACHINE}-partitions-${SRCDATE}.zip"
 
 S = "${WORKDIR}"

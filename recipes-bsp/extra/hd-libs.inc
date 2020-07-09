@@ -7,7 +7,7 @@ RDEPENDS_${PN} = "libbluray"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-PR = "${SRCDATE}"
+PV = "${SRCDATE}"
 
 SRC_URI = "http://downloads.mutant-digital.net/${MACHINE}/${MACHINE}-libs-${SRCDATE}.zip"
 
