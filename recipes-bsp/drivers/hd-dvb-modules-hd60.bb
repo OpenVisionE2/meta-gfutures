@@ -2,6 +2,7 @@ KV = "4.4.35"
 SRCDATE = "20200622"
 
 PROVIDES = "virtual/blindscan-dvbs"
+RDEPENDS_${PN} = "libjpeg-turbo"
 
 require hd-dvb-modules.inc
 
