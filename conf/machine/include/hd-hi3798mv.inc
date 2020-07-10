@@ -57,9 +57,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "mali", "hd-mali-${MACHINE} kernel-module-mali-${HICHIPSET}" , "", d)} \
 	"
 
-IMAGEDIR ?= "hd"
-IMAGEDIRRECOVERY ?= "hd-recovery"
-IMGDEPLOYDIR ?= "${DEPLOY_DIR_IMAGE}"
+IMAGEDIR = "hd"
 
 IMAGE_CMD_hdfastboot8gb_append = " \
 	mkdir -p ${IMGDEPLOYDIR}/${IMAGEDIR}/${MACHINE}; \

@@ -25,9 +25,6 @@ DVBMEDIASINK_CONFIG_mipsel = "--with-wma --with-wmv --with-pcm --with-dts --with
 	${@bb.utils.contains('MACHINE_FEATURES', 'h265', '--with-h265 --with-vb6 --with-vb8 --with-spark' , '', d)} \
 	"
 
-IMAGEDIR ?= "${MACHINE}"
-IMGDEPLOYDIR ?= "${DEPLOY_DIR_IMAGE}"
-
 # ARM
 IMAGE_CMD_hdemmc_append_arm = "\
 	mkdir -p ${IMGDEPLOYDIR}/${IMAGEDIR}; \
