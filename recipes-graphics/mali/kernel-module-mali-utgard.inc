@@ -1,4 +1,4 @@
-inherit module
+inherit module machine_kernel_pr
 
 SUMMARY = "Mali Utgard GPU Kernel Drivers"
 SRC_URI = "https://developer.arm.com/-/media/Files/downloads/mali-drivers/kernel/mali-utgard-gpu/${MALI_PACKAGE_NAME}.tgz;name=driver"
@@ -29,8 +29,8 @@ do_install() {
 }
 
 do_install_append() {
-    install -d ${D}${sysconfdir}/modules-load.d
-    echo mali > ${D}${sysconfdir}/modules-load.d/mali.conf
+	install -d ${D}${sysconfdir}/modules-load.d
+	echo mali > ${D}${sysconfdir}/modules-load.d/_mali.conf
 }
 
 FILES_${PN} += "${sysconfdir}/modules-load.d/_mali.conf"
