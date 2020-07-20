@@ -10,7 +10,7 @@ DEFAULTTUNE = "cortexa15hf-neon-vfpv4"
 require conf/machine/include/tune-cortexa15.inc
 require conf/machine/include/hd.inc
 
-MACHINE_FEATURES += "dvb-c textlcd qteglfs swap emmc ci"
+MACHINE_FEATURES += "dvb-c textlcd qteglfs emmc ci"
 
 CHIPSET = "bcm7251s"
 
@@ -21,3 +21,7 @@ MTD_BOOTFS = "mmcblk0p1"
 KERNEL_FILE = "kernel.bin"
 ROOTFS_FILE = "rootfs.tar.bz2"
 MTD_BLACK  = "mmcblk0"
+
+MACHINE_EXTRA_RRECOMMENDS += "\
+	 ${@bb.utils.contains('MACHINE_FEATURES', 'swap', 'hd-swapcreate', '',d)} \
+	"

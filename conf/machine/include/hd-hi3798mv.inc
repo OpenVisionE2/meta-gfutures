@@ -34,7 +34,7 @@ PREFERRED_PROVIDER_virtual/mesa ?= "mesa"
 PREFERRED_PROVIDER_virtual/blindscan-dvbs ?= "hd-dvb-modules-${MACHINE}"
 PREFERRED_PROVIDER_virtual/blindscan-dvbc ?= "hd-dvb-modules-${MACHINE}"
 PREFERRED_PROVIDER_virtual/gstreamer1.0-dvbmediasink ?= "gstreamer1.0-plugin-dvbmediasink"
-PREFERRED_PROVIDER_virtual/enigma2-mediaservice ?= "enigma2-plugin-systemplugins-servicehisilicon"
+PREFERRED_PROVIDER_virtual/enigma2-mediaservice = "enigma2-plugin-systemplugins-servicehisilicon"
 
 require conf/machine/include/tune-cortexa15.inc
 require conf/machine/include/hd-essential.inc
@@ -45,11 +45,11 @@ EXTRA_OECONF_append_pn-enigma2 += " --with-alphablendingacceleration=always --wi
 # Gstreamer dvbmediasink
 DVBMEDIASINK_CONFIG = "--with-h265 --with-vb8 --with-vb9 --with-wma --with-wmv --with-pcm  --with-eac3 --with-amr --with-spark"
 
-MACHINE_EXTRA_RRECOMMENDS = " \
+MACHINE_EXTRA_RRECOMMENDS += "\
 	ffmpeg \
-"
+	"
 
-MACHINE_FEATURES += " alsa usbhost switchoff osdposition hdmicec textlcd 7segment blindscan hisil mali transcoding emmc hisi-recovery mountboot fastboot"
+MACHINE_FEATURES += "alsa usbhost switchoff osdposition hdmicec textlcd 7segment blindscan-dvbs blindscan-tbs hisil mali transcoding emmc hisi-recovery mountboot fastboot multitranscoding wol HDMI"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "hisil", "hd-libs-${HICHIPSET} hd-partitions-${MACHINE} hd-bootargs-${MACHINE} hd-tntfs-${HICHIPSET}" , "", d)} \

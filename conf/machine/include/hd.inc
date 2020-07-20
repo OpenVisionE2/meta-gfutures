@@ -14,9 +14,9 @@ PREFERRED_PROVIDER_virtual/libgl ?= "mesa"
 PREFERRED_PROVIDER_virtual/mesa ?= "mesa"
 PREFERRED_PROVIDER_virtual/kernel = "linux-hd"
 
-MACHINE_FEATURES += "alsa usbhost switchoff osdposition hdmicec blindscan-tbs"
+MACHINE_FEATURES += "alsa hdmicec usbhost switchoff osdposition hdmicec blindscan-tbs HDMI"
 
-MACHINE_EXTRA_RRECOMMENDS = " \
+MACHINE_EXTRA_RRECOMMENDS += "\
 	gstreamer1.0-plugin-dvbmediasink \
 	"
 

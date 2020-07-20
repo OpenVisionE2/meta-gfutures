@@ -1,8 +1,6 @@
 SUMMARY = "GFutures create swap"
 LICENSE = "CLOSED"
 
-PV = "1.0"
-
 SRC_URI="file://createswap.sh"
 
 do_install() {
@@ -11,3 +9,5 @@ do_install() {
     install -m 0755 ${WORKDIR}/createswap.sh ${D}${sysconfdir}/init.d/createswap.sh
     ln -sf ../init.d/createswap.sh ${D}${sysconfdir}/rc3.d/S98createswap
 }
+
+COMPATIBLE_MACHINE = "^(hd51|vs1500)$"
