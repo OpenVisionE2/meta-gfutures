@@ -12,7 +12,7 @@ require conf/machine/include/hd.inc
 
 MACHINE_FEATURES += "dvb-c textlcd qteglfs emmc ci"
 
-CHIPSET = "bcm7251s"
+SOC_FAMILY = "bcm7251s"
 
 MTD_KERNEL = "mmcblk0p2"
 MTD_ROOTFS = "mmcblk0p3"

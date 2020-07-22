@@ -12,8 +12,9 @@ IMAGE_CLASSES += " hd-fastboot8gb_image"
 IMAGE_FSTYPES += " hdfastboot8gb"
 CMDLINE ?= "console=ttyAMA0,115200n8"
 
-CHIPSET = "Hi3798Mv200"
+SOC_FAMILY = "hisi3798mv200"
 HICHIPSET = "3798mv200"
+CHIPSET = "Hi3798Mv200"
 RCTYPE = "27"
 
 KERNEL_FILE = "uImage"
