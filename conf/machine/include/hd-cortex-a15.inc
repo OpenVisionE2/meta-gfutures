@@ -25,3 +25,5 @@ MTD_BLACK  = "mmcblk0"
 MACHINE_EXTRA_RRECOMMENDS += "\
 	 ${@bb.utils.contains('MACHINE_FEATURES', 'swap', 'hd-swapcreate', '',d)} \
 	"
+
+STB_PLATFORM = "gfuturesbcmarm"
