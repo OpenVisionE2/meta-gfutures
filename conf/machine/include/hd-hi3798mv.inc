@@ -25,16 +25,16 @@ MTD_BLACK  = "mmcblk0"
 PREFERRED_VERSION_linux-hd = "4.4.35"
 
 #Provider
-PREFERRED_PROVIDER_virtual/kernel ?= "linux-hd"
+PREFERRED_PROVIDER_virtual/kernel = "linux-hd"
 PREFERRED_PROVIDER_virtual/egl ?= "hd-mali-${MACHINE}"
 PREFERRED_PROVIDER_virtual/libgles1 ?= "hd-mali-${MACHINE}"
 PREFERRED_PROVIDER_virtual/libgles2 ?= "hd-mali-${MACHINE}"
 PREFERRED_PROVIDER_virtual/libgbm ?= "hd-mali-${MACHINE}"
 PREFERRED_PROVIDER_virtual/libgl ?= "mesa"
 PREFERRED_PROVIDER_virtual/mesa ?= "mesa"
-PREFERRED_PROVIDER_virtual/blindscan-dvbs ?= "hd-dvb-modules-${MACHINE}"
-PREFERRED_PROVIDER_virtual/blindscan-dvbc ?= "hd-dvb-modules-${MACHINE}"
-PREFERRED_PROVIDER_virtual/gstreamer1.0-dvbmediasink ?= "gstreamer1.0-plugin-dvbmediasink"
+PREFERRED_PROVIDER_virtual/blindscan-dvbs = "hd-dvb-modules-${MACHINE}"
+PREFERRED_PROVIDER_virtual/blindscan-dvbc = "hd-dvb-modules-${MACHINE}"
+PREFERRED_PROVIDER_virtual/gstreamer1.0-dvbmediasink = "gstreamer1.0-plugin-dvbmediasink"
 PREFERRED_PROVIDER_virtual/enigma2-mediaservice = "enigma2-plugin-systemplugins-servicehisilicon"
 
 require conf/machine/include/tune-cortexa15.inc
