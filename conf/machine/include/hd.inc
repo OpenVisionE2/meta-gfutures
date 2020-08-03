@@ -1,6 +1,5 @@
 require conf/machine/include/hd-essential.inc
 
-KERNEL_MODULE_AUTOLOAD += "xfs"
 
 # We know about rtc
 MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
