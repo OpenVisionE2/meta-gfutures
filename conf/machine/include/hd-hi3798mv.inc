@@ -91,3 +91,5 @@ IMAGE_CMD_hdfastboot8gb_append = " \
 "
 
 STB_PLATFORM = "gfutureshisil"
+
+EXTRA_ALSA = "mv200"
