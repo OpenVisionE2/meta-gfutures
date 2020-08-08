@@ -25,7 +25,7 @@ PKG_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_PACKAGE_NAME}-image"
 RPROVIDES_${KERNEL_PACKAGE_NAME}-base = "${KERNEL_PACKAGE_NAME}-${KERNEL_VERSION}"
 RPROVIDES_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_PACKAGE_NAME}-image-${KERNEL_VERSION}"
 
-SRC_URI += "http://downloads.mutant-digital.net/linux-${PV}-${ARCH}.tar.gz;name=${ARCH} \
+SRC_URI = "http://downloads.mutant-digital.net/linux-${PV}-${ARCH}.tar.gz;name=${ARCH} \
     file://defconfig \
     file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
     file://initramfs-subdirboot.cpio.gz;unpack=0 \
@@ -44,7 +44,7 @@ SRC_URI += "http://downloads.mutant-digital.net/linux-${PV}-${ARCH}.tar.gz;name=
     file://0003-makefile-disable-warnings.patch \
     "
 
-SRC_URI_append_arm += "\
+SRC_URI_append_arm = "\
     file://findkerneldevice.sh \
     file://reserve_dvb_adapter_0.patch \
     file://blacklist_mmc0.patch \
