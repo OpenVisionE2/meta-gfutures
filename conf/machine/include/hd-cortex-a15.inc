@@ -1,4 +1,6 @@
-PREFERRED_VERSION_linux-hd = "4.10.12"
+KERNELVERSION = "4.10.12"
+
+PREFERRED_VERSION_linux-hd = "${KERNELVERSION}"
 
 IMAGE_CLASSES += "hd-emmc_image_multiboot"
 IMAGE_FSTYPES += "hdemmc tar"

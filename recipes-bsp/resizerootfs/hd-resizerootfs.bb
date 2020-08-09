@@ -5,7 +5,6 @@ COMPATIBLE_MACHINE = "^(hd51|vs1500|hd60|bre2ze4k|hd61|axultra)$"
 
 RDEPENDS_${PN} = "e2fsprogs-resize2fs"
 
-PV = "1.0"
 
 SRC_URI = "file://resizerootfs"
 

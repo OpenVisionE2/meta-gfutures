@@ -1,10 +1,11 @@
 DESCRIPTION = "Linux kernel for ${MACHINE}"
 SECTION = "kernel"
 LICENSE = "GPLv2"
+LIC_FILES_CHKSUM = "file://${WORKDIR}/linux-${PV}/COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-KERNEL_RELEASE = "4.10.12"
+KERNEL_RELEASE = "${KERNELVERSION}"
 
 COMPATIBLE_MACHINE = "^(hd11|hd51|hd500c|hd530c|hd1100|hd1200|hd1265|hd1500|hd2400|vs1000|vs1500|bre2ze4k|axultra)$"
 
@@ -15,8 +16,6 @@ SRC_URI[mips.sha256sum] = "738896d2682211d2079eeaa1c7b8bdd0fe75eb90cd12dff2fc5ae
 SRC_URI[arm.md5sum] = "bda1c09ed92a805cedc6770c0dd40e81"
 SRC_URI[arm.sha256sum] = "67a3ac98727595a399d5c399d3b66a7fadbe8136ac517e08decba5ea6964674a"
 
-LIC_FILES_CHKSUM = "file://${WORKDIR}/linux-${PV}/COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
-
 # By default, kernel.bbclass modifies package names to allow multiple kernels
 # to be installed in parallel. We revert this change and rprovide the versioned
 # package names instead, to allow only one kernel to be installed.
@@ -26,30 +25,30 @@ RPROVIDES_${KERNEL_PACKAGE_NAME}-base = "${KERNEL_PACKAGE_NAME}-${KERNEL_VERSION
 RPROVIDES_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_PACKAGE_NAME}-image-${KERNEL_VERSION}"
 
 SRC_URI = "http://downloads.mutant-digital.net/linux-${PV}-${ARCH}.tar.gz;name=${ARCH} \
-    file://defconfig \
-    file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
-    file://initramfs-subdirboot.cpio.gz;unpack=0 \
-    file://export_pmpoweroffprepare.patch \
-    file://TBS-fixes-for-4.10-kernel.patch \
-    file://0001-Support-TBS-USB-drivers-for-4.6-kernel.patch \
-    file://0001-TBS-fixes-for-4.6-kernel.patch \
-    file://0001-STV-Add-PLS-support.patch \
-    file://0001-STV-Add-SNR-Signal-report-parameters.patch \
-    file://blindscan2.patch \
-    file://0001-stv090x-optimized-TS-sync-control.patch \
-    file://t230c2.patch \
-    file://add-more-devices-rtl8xxxu.patch \
-    file://0005-xbox-one-tuner-4.10.patch \
-    file://0006-dvb-media-tda18250-support-for-new-silicon-tuner.patch \
-    file://0003-makefile-disable-warnings.patch \
-    "
+	file://defconfig \
+	file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
+	file://initramfs-subdirboot.cpio.gz;unpack=0 \
+	file://export_pmpoweroffprepare.patch \
+	file://TBS-fixes-for-4.10-kernel.patch \
+	file://0001-Support-TBS-USB-drivers-for-4.6-kernel.patch \
+	file://0001-TBS-fixes-for-4.6-kernel.patch \
+	file://0001-STV-Add-PLS-support.patch \
+	file://0001-STV-Add-SNR-Signal-report-parameters.patch \
+	file://blindscan2.patch \
+	file://0001-stv090x-optimized-TS-sync-control.patch \
+	file://t230c2.patch \
+	file://add-more-devices-rtl8xxxu.patch \
+	file://0005-xbox-one-tuner-4.10.patch \
+	file://0006-dvb-media-tda18250-support-for-new-silicon-tuner.patch \
+	file://0003-makefile-disable-warnings.patch \
+	"
 
 SRC_URI_append_arm = "\
-    file://findkerneldevice.sh \
-    file://reserve_dvb_adapter_0.patch \
-    file://blacklist_mmc0.patch \
-    file://enable_hauppauge_solohd.patch \
-    "
+	file://findkerneldevice.sh \
+	file://reserve_dvb_adapter_0.patch \
+	file://blacklist_mmc0.patch \
+	file://enable_hauppauge_solohd.patch \
+	"
 
 S = "${WORKDIR}/linux-${PV}"
 

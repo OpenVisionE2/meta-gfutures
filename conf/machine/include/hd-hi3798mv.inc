@@ -1,5 +1,6 @@
 DISTRO_FEATURES_append = " opengl"
 
+KERNELVERSION = "4.4.35"
 
 # We know about rtc
 MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
@@ -21,7 +22,7 @@ ROOTFS_FILE = "rootfs.tar.bz2"
 MTD_BOOTFS = "mmcblk0p4"
 MTD_BLACK  = "mmcblk0"
 
-PREFERRED_VERSION_linux-hd = "4.4.35"
+PREFERRED_VERSION_linux-hd = "${KERNELVERSION}"
 
 #Provider
 PREFERRED_PROVIDER_virtual/kernel = "linux-hd"

@@ -1,4 +1,3 @@
-KV = "4.10.12"
 SRCDATE = "20180412"
 
 require hd-dvb-modules.inc
