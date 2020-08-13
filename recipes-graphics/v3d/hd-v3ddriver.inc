@@ -24,16 +24,16 @@ do_install_append() {
     install -m 0755 ${S}/libnxpl.so ${D}${libdir}/
     install -m 0755 ${S}/libnexus.so ${D}${libdir}/
     install -m 0755 ${S}/libv3ddriver.so ${D}${libdir}/
-    (cd ${D}/${libdir} && ln -sf libv3ddriver.so libEGL.so.1.4 \
+    (cd ${D}${libdir} && ln -sf libv3ddriver.so libEGL.so.1.4 \
     && ln -sf libEGL.so.1.4 libEGL.so.1 \
     && ln -sf libEGL.so.1 libEGL.so)
-    (cd ${D}/${libdir} && ln -sf libv3ddriver.so libGLESv1_CM.so.1.1 \
+    (cd ${D}${libdir} && ln -sf libv3ddriver.so libGLESv1_CM.so.1.1 \
     && ln -sf libGLESv1_CM.so.1.1 libGLESv1_CM.so.1 \
     && ln -sf libGLESv1_CM.so.1 libGLESv1_CM.so)
-    (cd ${D}/${libdir} && ln -sf libv3ddriver.so libGLESv2.so.2.0 \
+    (cd ${D}${libdir} && ln -sf libv3ddriver.so libGLESv2.so.2.0 \
     && ln -sf libGLESv2.so.2.0 libGLESv2.so.2 \
     && ln -sf libGLESv2.so.2 libGLESv2.so)
-    (cd ${D}/${libdir} && ln -sf libv3ddriver.so libgbm.so.1 \
+    (cd ${D}${libdir} && ln -sf libv3ddriver.so libgbm.so.1 \
     && ln -sf libgbm.so.1 libgbm.so)
 }
 
