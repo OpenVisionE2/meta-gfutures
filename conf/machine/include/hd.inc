@@ -55,3 +55,6 @@ IMAGE_CMD_ubi_append_mipsel = " \
 	rm -Rf ${IMGDEPLOYDIR}/boot; \
 	rm -Rf ${IMAGEDIR}; \
 	"
+
+RCTYPE ?= "16"
+RCNAME ?= "hd1100"

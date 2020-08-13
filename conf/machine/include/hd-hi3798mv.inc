@@ -15,7 +15,6 @@ CMDLINE ?= "console=ttyAMA0,115200n8"
 SOC_FAMILY = "hisi3798mv200"
 HICHIPSET = "3798mv200"
 CHIPSET = "Hi3798Mv200"
-RCTYPE = "27"
 
 KERNEL_FILE = "uImage"
 ROOTFS_FILE = "rootfs.tar.bz2"
