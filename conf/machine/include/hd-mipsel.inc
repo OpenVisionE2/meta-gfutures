@@ -14,3 +14,22 @@ DEFAULTTUNE = "mips32el"
 
 require conf/machine/include/tune-mips32.inc
 require conf/machine/include/hd.inc
+
+IMAGE_CMD_ubi_append = " \
+	mkdir -p ${IMGDEPLOYDIR}/${IMAGEDIR}; \
+	cp ${IMGDEPLOYDIR}/${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.ubi ${IMGDEPLOYDIR}/${IMAGEDIR}/${ROOTFS_FILE}; \
+	cp ${DEPLOY_DIR_IMAGE}/vmlinux.gz-${MACHINE}.bin ${IMGDEPLOYDIR}/${IMAGEDIR}/${KERNEL_FILE}; \
+	echo "${IMAGE_NAME}" > ${IMGDEPLOYDIR}/${IMAGEDIR}/imageversion; \
+	echo "rename this file to 'force' to force an update without confirmation" > ${IMGDEPLOYDIR}/${IMAGEDIR}/noforce; \
+	rm -f ${IMGDEPLOYDIR}/*.zip; \
+	cd ${IMGDEPLOYDIR}; \
+	zip ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/*; \
+	rm -f ${DEPLOY_DIR_IMAGE}/*.ubi; \
+	rm -f ${DEPLOY_DIR_IMAGE}/*.ubifs; \
+	rm -Rf ${IMGDEPLOYDIR}/boot; \
+	rm -Rf ${IMAGEDIR}; \
+	"
+
+DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dts --with-eac3 \
+	${@bb.utils.contains('MACHINE_FEATURES', 'h265', '--with-h265 --with-vb6 --with-vb8 --with-spark' , '', d)} \
+	"

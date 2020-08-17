@@ -4,7 +4,7 @@ PREFERRED_VERSION_linux-hd = "${KERNELVERSION}"
 
 IMAGE_CLASSES += "hd-emmc_image_multiboot"
 IMAGE_FSTYPES += "hdemmc tar"
-IMAGE_ROOTFS_SIZE ?= "294912"
+IMAGE_ROOTFS_SIZE ?= "589824"
 
 TARGET_ARCH = "arm"
 DEFAULTTUNE = "cortexa15hf-neon-vfpv4"
@@ -12,7 +12,7 @@ DEFAULTTUNE = "cortexa15hf-neon-vfpv4"
 require conf/machine/include/tune-cortexa15.inc
 require conf/machine/include/hd.inc
 
-MACHINE_FEATURES += "dvb-c textlcd qteglfs emmc ci"
+MACHINE_FEATURES += "textlcd emmc ci mountboot swap"
 
 SOC_FAMILY = "bcm7251s"
 
@@ -29,3 +29,20 @@ MACHINE_EXTRA_RRECOMMENDS += "\
 	"
 
 STB_PLATFORM = "gfuturesbcmarm"
+
+IMAGE_CMD_hdemmc_append = "\
+	mkdir -p ${IMGDEPLOYDIR}/${IMAGEDIR}; \
+	cp ${IMGDEPLOYDIR}/${IMAGE_NAME}.emmc.img ${IMGDEPLOYDIR}/${IMAGEDIR}/disk.img; \
+	echo "${IMAGE_NAME}" > ${IMGDEPLOYDIR}/${IMAGEDIR}/imageversion; \
+	cp ${IMAGE_ROOTFS}/tmp/zImage ${IMGDEPLOYDIR}/${IMAGEDIR}/${KERNEL_FILE}; \
+	cp ${IMGDEPLOYDIR}/${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.tar ${IMGDEPLOYDIR}/${IMAGEDIR}/rootfs.tar; \
+	bzip2 ${IMGDEPLOYDIR}/${IMAGEDIR}/rootfs.tar; \
+	rm -f ${IMGDEPLOYDIR}/*.zip; \
+	cd ${IMGDEPLOYDIR}; \
+	zip ${IMAGE_NAME}_recovery_emmc.zip ${IMAGEDIR}/disk.img ${IMAGEDIR}/imageversion; \
+	zip ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/imageversion ${IMAGEDIR}/${KERNEL_FILE} ${IMAGEDIR}/${ROOTFS_FILE}; \
+	rm -f ${DEPLOY_DIR_IMAGE}/*.ext4; \
+	rm -Rf ${IMAGEDIR}; \
+	"
+
+DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dts --with-eac3 --with-h265 --with-vb6 --with-vb8 --with-vb9 --with-spark"

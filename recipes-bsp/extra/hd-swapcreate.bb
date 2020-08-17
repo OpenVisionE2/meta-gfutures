@@ -10,4 +10,4 @@ do_install() {
     ln -sf ../init.d/createswap.sh ${D}${sysconfdir}/rc3.d/S98createswap
 }
 
-COMPATIBLE_MACHINE = "^(hd51|vs1500)$"
+COMPATIBLE_MACHINE = "^(hd51|vs1500|axultra|bre2ze4k)$"

@@ -43,7 +43,7 @@ require conf/machine/include/hd-essential.inc
 EXTRA_OECONF_append_pn-enigma2 = " --with-alphablendingacceleration=always --with-blitaccelerationthreshold=250 --with-fillaccelerationthreshold=190000"
 
 # Gstreamer dvbmediasink
-DVBMEDIASINK_CONFIG = "--with-h265 --with-vb8 --with-vb9 --with-wma --with-wmv --with-pcm  --with-eac3 --with-amr --with-spark"
+DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dts --with-eac3 --with-h265 --with-vb6 --with-vb8 --with-vb9 --with-spark"
 
 MACHINE_EXTRA_RRECOMMENDS += "\
 	ffmpeg \
@@ -54,6 +54,7 @@ MACHINE_FEATURES += "alsa usbhost switchoff osdposition hdmicec textlcd 7segment
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "hisil", "hd-libs-${HICHIPSET} hd-partitions-${MACHINE} hd-bootargs-${MACHINE} hd-tntfs-${HICHIPSET}" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "hisi-recovery", "hd-recovery-${MACHINE}" , "", d)} \
+	${@bb.utils.contains("MACHINE_FEATURES", "wol", "hd-ethwol" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "mali", "hd-mali-${MACHINE} kernel-module-mali-${HICHIPSET}" , "", d)} \
 	"
 
