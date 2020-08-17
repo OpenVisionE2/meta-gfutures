@@ -33,3 +33,5 @@ IMAGE_CMD_ubi_append = " \
 DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dts --with-eac3 \
 	${@bb.utils.contains('MACHINE_FEATURES', 'h265', '--with-h265 --with-vb6 --with-vb8 --with-spark' , '', d)} \
 	"
+
+MACHINE_FEATURES += "videoenhancement"
