@@ -24,7 +24,7 @@ KERNEL_FILE = "kernel.bin"
 ROOTFS_FILE = "rootfs.tar.bz2"
 MTD_BLACK  = "mmcblk0"
 
-MACHINE_EXTRA_RRECOMMENDS += "\
+MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	 ${@bb.utils.contains('MACHINE_FEATURES', 'swap', 'hd-swapcreate', '',d)} \
 	"
 

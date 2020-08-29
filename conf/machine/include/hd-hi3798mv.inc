@@ -45,10 +45,6 @@ EXTRA_OECONF_append_pn-enigma2 = " --with-alphablendingacceleration=always --wit
 # Gstreamer dvbmediasink
 DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dts --with-eac3 --with-h265 --with-vb6 --with-vb8 --with-vb9 --with-spark"
 
-MACHINE_EXTRA_RRECOMMENDS += "\
-	ffmpeg \
-	"
-
 MACHINE_FEATURES += "alsa usbhost switchoff osdposition hdmicec textlcd 7segment blindscan-dvbs blindscan-tbs hisil mali transcoding emmc hisi-recovery mountboot fastboot multitranscoding wol HDMI"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
