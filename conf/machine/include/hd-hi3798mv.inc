@@ -48,7 +48,7 @@ DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dts --with-eac3 -
 MACHINE_FEATURES += "alsa usbhost switchoff osdposition hdmicec textlcd 7segment blindscan-dvbs blindscan-tbs hisil mali transcoding emmc hisi-recovery mountboot fastboot multitranscoding wol HDMI"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
-	${@bb.utils.contains("MACHINE_FEATURES", "hisil", "hd-libs-${HICHIPSET} hd-partitions-${MACHINE} hd-bootargs-${MACHINE} hd-tntfs-${HICHIPSET}" , "", d)} \
+	${@bb.utils.contains("MACHINE_FEATURES", "hisil", "hd-libs-${HICHIPSET} hd-partitions-${MACHINE} hd-bootargs-${MACHINE}" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "hisi-recovery", "hd-recovery-${MACHINE}" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "wol", "hd-ethwol" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "mali", "hd-mali-${MACHINE} kernel-module-mali-${HICHIPSET}" , "", d)} \
