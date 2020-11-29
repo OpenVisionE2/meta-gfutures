@@ -90,7 +90,11 @@ IMAGE_CMD_hdfastboot8gb_append = " \
 	zip -r ../${IMAGE_NAME}_usb.zip unforce_${MACHINE}.txt force_${MACHINE}_READ.ME ${MACHINE}/imageversion ${MACHINE}/uImage ${MACHINE}/rootfs.tar.bz2; \
 	cd ..; \
 	rm -Rf ${IMAGEDIR}; \
-"
+	"
+
+IMAGE_CMD_prepend = "\
+	rm -Rf ${IMAGE_ROOTFS}/tmp/*; \
+	"
 
 STB_PLATFORM = "gfutureshisil"
 

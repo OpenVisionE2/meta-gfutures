@@ -35,6 +35,7 @@ IMAGE_CMD_hdemmc_append = "\
 	cp ${IMGDEPLOYDIR}/${IMAGE_NAME}.emmc.img ${IMGDEPLOYDIR}/${IMAGEDIR}/disk.img; \
 	echo "${IMAGE_NAME}" > ${IMGDEPLOYDIR}/${IMAGEDIR}/imageversion; \
 	cp ${IMAGE_ROOTFS}/tmp/zImage ${IMGDEPLOYDIR}/${IMAGEDIR}/${KERNEL_FILE}; \
+	rm -Rf ${IMAGE_ROOTFS}/tmp/*; \
 	cp ${IMGDEPLOYDIR}/${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.tar ${IMGDEPLOYDIR}/${IMAGEDIR}/rootfs.tar; \
 	bzip2 ${IMGDEPLOYDIR}/${IMAGEDIR}/rootfs.tar; \
 	rm -f ${IMGDEPLOYDIR}/*.zip; \
