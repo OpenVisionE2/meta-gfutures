@@ -34,8 +34,7 @@ IMAGE_CMD_hdemmc_append = "\
 	mkdir -p ${IMGDEPLOYDIR}/${IMAGEDIR}; \
 	cp ${IMGDEPLOYDIR}/${IMAGE_NAME}.emmc.img ${IMGDEPLOYDIR}/${IMAGEDIR}/disk.img; \
 	echo "${IMAGE_NAME}" > ${IMGDEPLOYDIR}/${IMAGEDIR}/imageversion; \
-	cp ${IMAGE_ROOTFS}/tmp/zImage ${IMGDEPLOYDIR}/${IMAGEDIR}/${KERNEL_FILE}; \
-	rm -Rf ${IMAGE_ROOTFS}/tmp/*; \
+	cp ${DEPLOY_DIR_IMAGE}/zImage ${IMGDEPLOYDIR}/${IMAGEDIR}/${KERNEL_FILE}; \
 	cp ${IMGDEPLOYDIR}/${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.tar ${IMGDEPLOYDIR}/${IMAGEDIR}/rootfs.tar; \
 	bzip2 ${IMGDEPLOYDIR}/${IMAGEDIR}/rootfs.tar; \
 	rm -f ${IMGDEPLOYDIR}/*.zip; \
@@ -44,6 +43,10 @@ IMAGE_CMD_hdemmc_append = "\
 	zip ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/imageversion ${IMAGEDIR}/${KERNEL_FILE} ${IMAGEDIR}/${ROOTFS_FILE}; \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.ext4; \
 	rm -Rf ${IMAGEDIR}; \
+	"
+
+IMAGE_CMD_prepend = "\
+	rm -Rf ${IMAGE_ROOTFS}/tmp/*; \
 	"
 
 DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dts --with-eac3 --with-h265 --with-vb6 --with-vb8 --with-vb9 --with-spark"

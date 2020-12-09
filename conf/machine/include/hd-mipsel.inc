@@ -30,7 +30,7 @@ IMAGE_CMD_ubi_append = " \
 	rm -Rf ${IMAGEDIR}; \
 	"
 
-IMAGE_CMD_ubi_prepend = " \
+IMAGE_CMD_ubifs_prepend = " \
 	rm -Rf ${IMAGE_ROOTFS}/tmp/*; \
 	"
 
