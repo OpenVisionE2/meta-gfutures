@@ -4,10 +4,6 @@ require conf/machine/include/hd-essential.inc
 MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 
 #Provider
-PREFERRED_PROVIDER_virtual/egl ?= "hd-v3ddriver-${MACHINE}"
-PREFERRED_PROVIDER_virtual/libgles1 ?= "hd-v3ddriver-${MACHINE}"
-PREFERRED_PROVIDER_virtual/libgles2 ?= "hd-v3ddriver-${MACHINE}"
-PREFERRED_PROVIDER_virtual/libgbm ?= "hd-v3ddriver-${MACHINE}"
 PREFERRED_PROVIDER_virtual/libgl ?= "mesa"
 PREFERRED_PROVIDER_virtual/mesa ?= "mesa"
 PREFERRED_PROVIDER_virtual/kernel = "linux-hd"
