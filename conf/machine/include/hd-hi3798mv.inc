@@ -91,6 +91,7 @@ IMAGE_CMD_hdfastboot8gb_append = " \
 	zip -r ../${IMAGE_NAME}_usb.zip unforce_${MACHINE}.txt force_${MACHINE}_READ.ME ${MACHINE}/imageversion ${MACHINE}/donate.txt ${MACHINE}/uImage ${MACHINE}/rootfs.tar.bz2; \
 	cd ..; \
 	rm -Rf ${IMAGEDIR}; \
+	rm -Rf hd-partitions-${MACHINE}; \
 	"
 
 IMAGE_CMD_prepend = "\
