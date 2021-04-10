@@ -34,14 +34,14 @@ EOF
 }
 
 do_install_append() {
-	install -d ${D}${sysconfdir}/init.d
+	install -d ${D}${INIT_D_DIR}
 	install -d ${D}${bindir}
-	install -m 0755 ${S}/suspend ${D}${sysconfdir}/init.d
+	install -m 0755 ${S}/suspend ${D}${INIT_D_DIR}
 	install -m 0755 ${S}/turnoff_power ${D}${bindir}
 }
 
 do_package_qa() {
 }
 
-FILES_${PN} += "${bindir} ${sysconfdir}/init.d"
+FILES_${PN} += "${bindir} ${INIT_D_DIR}"
 
