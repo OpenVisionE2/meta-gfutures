@@ -1,4 +1,4 @@
-DISTRO_FEATURES_remove += "x11 wayland directfb"
+DISTRO_FEATURES_remove += "x11 wayland"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	hd-dvb-modules-${MACHINE} \
