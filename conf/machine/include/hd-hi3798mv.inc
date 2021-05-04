@@ -1,4 +1,4 @@
-DISTRO_FEATURES_append = " opengl"
+KERNEL_MODULE_AUTOLOAD += "mali"
 
 KERNELVERSION = "4.4.35"
 
@@ -25,10 +25,10 @@ PREFERRED_VERSION_linux-hd = "${KERNELVERSION}"
 
 #Provider
 PREFERRED_PROVIDER_virtual/kernel = "linux-hd"
-PREFERRED_PROVIDER_virtual/egl = "hd-mali-${MACHINE}"
-PREFERRED_PROVIDER_virtual/libgles1 = "hd-mali-${MACHINE}"
-PREFERRED_PROVIDER_virtual/libgles2 = "hd-mali-${MACHINE}"
-PREFERRED_PROVIDER_virtual/libgbm = "hd-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/egl ?= "hd-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/libgles1 ?= "hd-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/libgles2 ?= "hd-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/libgbm ?= "hd-mali-${MACHINE}"
 PREFERRED_PROVIDER_virtual/libgl ?= "mesa"
 PREFERRED_PROVIDER_virtual/mesa ?= "mesa"
 PREFERRED_PROVIDER_virtual/blindscan-dvbs = "hd-dvb-modules-${MACHINE}"
@@ -44,7 +44,7 @@ EXTRA_OECONF_append_pn-enigma2 = " --with-alphablendingacceleration=always --wit
 # Gstreamer dvbmediasink
 DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dts --with-eac3 --with-h265 --with-vb6 --with-vb8 --with-vb9 --with-spark"
 
-MACHINE_FEATURES += "alsa usbhost switchoff osdposition hdmicec textlcd 7segment blindscan-dvbs blindscan-tbs hisil mali transcoding emmc hisil-recovery mountboot fastboot multitranscoding wol HDMI"
+MACHINE_FEATURES += "alsa usbhost switchoff osdposition hdmicec textlcd 7segment blindscan-dvbs blindscan-tbs hisil mali transcoding emmc hisil-recovery mountboot fastboot multitranscoding wol HDMI kodi19"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "hisil", "hd-libs-${HICHIPSET} hd-partitions-${MACHINE} hd-bootargs-${MACHINE}" , "", d)} \
@@ -100,3 +100,5 @@ IMAGE_CMD_prepend = "\
 STB_PLATFORM = "gfutureshisil"
 
 EXTRA_ALSA = "mv200"
+
+KODIEXTSETTINGS = ""
