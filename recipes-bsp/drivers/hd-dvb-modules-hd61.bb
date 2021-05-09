@@ -1,7 +1,7 @@
 SRCDATE = "20201125"
 
 PROVIDES = "virtual/blindscan-dvbs virtual/blindscan-dvbc"
-RDEPENDS_${PN} = "libjpeg-turbo"
+RDEPENDS_${PN} = "libjpeg-turbo pulseaudio-lib-rtp"
 
 require hd-dvb-modules.inc
 
