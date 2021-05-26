@@ -6,3 +6,5 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	"
 
 BOX_BRAND = "gfutures"
+
+DISPLAY_BRAND ?= "Mut@nt"
